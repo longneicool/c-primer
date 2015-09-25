@@ -1,0 +1,7 @@
+#include "salesdata.h"
+
+SalesData::SalesData()
+{
+
+}
+

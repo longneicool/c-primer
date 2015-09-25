@@ -1,0 +1,25 @@
+#ifndef SALESDATA_H
+#define SALESDATA_H
+
+#include <string>
+#include <iostream>
+
+class SalesData
+{
+public:
+    SalesData();
+public:
+    std::string isbn () const{return bookNo;}
+    SalesData &combine(const SalesData &transData);
+    double avarge() const{return totalMoney/nums;}
+private:
+    std::string bookNo;
+    unsigned int nums;
+    double totalMoney;
+};
+
+SalesData add(const SalesData& lhs, const SalesData& rhs);
+std::ostream& print(std::ostream& os, const SalesData& salesData);
+std::istream& read(std::istream &in, SalesData &salesdata);
+
+#endif // SALESDATA_H

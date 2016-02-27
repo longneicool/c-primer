@@ -13,12 +13,15 @@ struct Folder
 {
     Folder();
     Folder(const Folder& f);
-    Folder& operator=(const Folder& rhs);
+    Folder& operator=(Folder& rhs);
     ~Folder();
 
 public:
     add(Message &msg);
     remove(Message &msg);
+private:
+    addAll();
+    removeAll();
 private:
     set<Message*> msgs;
 };

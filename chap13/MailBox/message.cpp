@@ -21,7 +21,9 @@ Message::Message(const Message& msg) :
 
 Message& Message::operator =(Message rhs)
 {
+    removeAll();
     swap(*this, rhs);
+    saveAll();
     return *this;
 }
 
@@ -61,4 +63,5 @@ void Message::removeAll()
 void swap(Message &lhs, Message &rhs)
 {
     lhs.contents.swap(rhs.contents);
+    lhs.folders.swap(rhs.folders);
 }

@@ -7,6 +7,21 @@ StrVec::StrVec()
     elements = nullptr;
 }
 
+StrVec::StrVec(const std::initializer_list<string> &il)
+{
+    auto size = il.size() * 2;
+    auto p = alloc.allocate(size);
+
+    elements = p;
+    for(auto s : il)
+    {
+        alloc.construct(p++, s);
+    }
+
+    first_free = p;
+    cap = elements + size;
+}
+
 StrVec::StrVec(const StrVec& str)
 {
     auto cpy = alloc_n_copy(str.begin(), str.end());

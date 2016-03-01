@@ -12,6 +12,7 @@ class StrVec
 {
 public:
     StrVec();
+    StrVec(const std::initializer_list<string> &il);
     StrVec(const StrVec&);
     StrVec &operator =(const StrVec& rhs);
     ~StrVec();

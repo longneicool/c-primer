@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <string>
+#include <utility>
 
 using std::allocator;
 using std::string;
@@ -11,27 +12,27 @@ class StrVec
 {
 public:
     StrVec();
-    StrVec(const Strvec&);
-    Strvec &operator =(const Strvec& rhs);
+    StrVec(const StrVec&);
+    StrVec &operator =(const StrVec& rhs);
     ~StrVec();
 
     void push_back(const string& s);
-    size_t size()
+    size_t size() const
     {
         return first_free - elements;
     }
 
-    size_t capcity()
+    size_t capacity() const
     {
         return cap - first_free;
     }
 
-    string* begin()
+    string* begin() const
     {
         return elements;
     }
 
-    string* end()
+    string* end() const
     {
         return first_free;
     }
@@ -41,7 +42,7 @@ private:
 
     void check_n_alloc()
     {
-        if(size() == capcity())
+        if(size() == capacity())
             reallocate();
     }
 
@@ -52,11 +53,8 @@ private:
     string *elements;
     string *first_free;
     string *cap;
-
-
-private:
-    allocator<string> a;
-
 };
+
+allocator<string> StrVec::alloc;
 
 #endif // STRVEC_H

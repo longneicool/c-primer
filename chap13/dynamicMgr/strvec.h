@@ -56,6 +56,4 @@ private:
     string *cap;
 };
 
-allocator<string> StrVec::alloc;
-
 #endif // STRVEC_H

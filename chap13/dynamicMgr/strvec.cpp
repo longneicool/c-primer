@@ -1,5 +1,7 @@
 #include "strvec.h"
 
+allocator<string> StrVec::alloc = allocator<string>();
+
 StrVec::StrVec()
 {
     first_free = nullptr;

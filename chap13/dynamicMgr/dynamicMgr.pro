@@ -9,3 +9,5 @@ SOURCES += main.cpp \
 HEADERS += \
     strvec.h
 
+QMAKE_CXXFLAGS += -std=gnu++0x
+

@@ -1,0 +1,18 @@
+#ifndef BLOBPTR_H
+#define BLOBPTR_H
+
+#include <memory>
+
+template<typename T>
+class BlobPtr
+{
+public:
+    BlobPtr() : cur(0) { };
+    BlobPtr(Blob<T> &a, size_t sz = 0):
+        wptr(a.data, )
+private:
+    std::weak_ptr<std::vector<T>> wptr;
+    std::size_t curr;
+};
+
+#endif // BLOBPTR_H

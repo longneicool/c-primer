@@ -4,11 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    blob.cpp
+    blobptr.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    blob.h
+    blob.h \
+    blobptr.h
 QMAKE_CXXFLAGS += -std=gnu++0x
